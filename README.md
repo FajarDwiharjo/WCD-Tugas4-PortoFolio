@@ -52,3 +52,105 @@ export default tseslint.config({
   },
 })
 ```
+# 🚀 Setup ReactJS + Vite + TailwindCSS di Visual Studio Code
+
+## ✨ Persiapan Awal
+
+Pastikan sudah terpasang:
+
+- [Node.js](https://nodejs.org/) (v18 ke atas)
+- [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
+
+---
+
+## ⚙️ Membuat Project ReactJS dengan Vite
+
+1. Buka terminal, lalu jalankan:
+
+   ```bash
+   npm create vite@latest nama-proyek-anda -- --template react
+   ```
+
+2. Masuk ke folder project:
+
+   ```bash
+   cd nama-proyek-anda
+   ```
+
+3. Install semua dependency:
+
+   ```bash
+   npm install
+   ```
+
+---
+
+## 🎨 Install TailwindCSS
+
+1. Install TailwindCSS, PostCSS, dan Autoprefixer:
+
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   ```
+
+2. Inisialisasi konfigurasi Tailwind:
+
+   ```bash
+   npx tailwindcss init -p
+   ```
+
+3. Edit `tailwind.config.js` bagian `content` menjadi:
+
+   ```javascript
+   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"]
+   ```
+
+4. Buat file `src/index.css` dan isi dengan:
+
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+5. Import file CSS ke dalam `src/main.jsx`:
+
+   ```javascript
+   import './index.css';
+   ```
+
+---
+
+## 🔌 Ekstensi VSCode yang Disarankan
+
+Install melalui marketplace VSCode:
+
+- Tailwind CSS IntelliSense
+- ES7+ React/Redux/React-Native snippets
+- Prettier - Code formatter
+- Simple React Snippets (opsional)
+
+---
+
+## 🔥 Menjalankan Proyek
+
+Jalankan server development:
+
+```bash
+npm run dev
+```
+
+Buka browser di URL yang muncul, biasanya:
+
+```
+http://localhost:5173/
+```
+
+---
+
+## 📝 Catatan
+
+- Jalankan semua perintah dari folder project.
+- Pastikan `tailwind.config.js` sudah benar.
+- Pastikan file CSS sudah di-import di `main.jsx`.
+- Jika autocomplete Tailwind tidak aktif, cek apakah ekstensi IntelliSense sudah terpasang dan aktif.
